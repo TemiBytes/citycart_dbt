@@ -1,0 +1,13 @@
+# Python venv
+venv/
+
+# dbt target & logs
+target/
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
