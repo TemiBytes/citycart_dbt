@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw_app
+    database: CITYCART_RAW
+    schema: RAW_APP
+    tables:
+      - name: customers
+        description: 'Raw customer records from the CityCart App'
+
+      - name: products
+        description: 'Raw product catalog from the CityCart App'
+      
+      - name: orders
+        description: 'Raw Orders placed from the CityCart App'
+        config:
+          loaded_at_field: created_at
+          freshness:
+            warn_after: {count: 30, period: day}
+            error_after: {count: 60, period: day}
+      
+      - name: order_items
+        description: 'Line Items belonging to each order in the CityCart App'
+  

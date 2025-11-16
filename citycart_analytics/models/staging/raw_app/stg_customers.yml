@@ -1,0 +1,25 @@
+models:
+  - name: stg_customers
+    description: "cleansed customer records from RAW_APP.CUSTOMERS"
+    columns:
+      - name: customer_id
+        description: "Primary key for the customers in the app."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: "Customer email address, standardized to lowercase."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: city
+        description: "Customer's city, standardized to uppercase."
+
+      - name: country
+        description: "Customer's country, standardized to uppercase."
+
+      - name: is_premium
+        description: "Indicates if the customer has a premium account."
+        
