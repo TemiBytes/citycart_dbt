@@ -1,0 +1,17 @@
+models:
+  - name: dim_customers
+    description: "customer dimension joined to city dimension"
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: email
+        data_tests:
+          - not_null
+      - name: city_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_city')
+                field: city_key

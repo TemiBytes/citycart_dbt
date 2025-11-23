@@ -1,0 +1,25 @@
+models:
+  - name: fct_orders
+    description: "fact table for orders with customer and city dimensions"
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: city_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_city')
+                field: city_key
+      - name: total_amount
+        data_tests:
+          - not_null

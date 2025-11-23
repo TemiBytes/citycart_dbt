@@ -1,0 +1,12 @@
+models:
+  - name: dim_city
+    description: "Unique list of cities + country where CityCart Operates"
+    columns:
+      - name: city_key
+        data_tests:
+          - not_null
+          - unique
+      - name: city
+        description: "Name of the City"
+      - name: country
+        description: "Country where the City is located"

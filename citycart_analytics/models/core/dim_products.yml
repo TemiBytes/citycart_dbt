@@ -1,0 +1,12 @@
+models:
+  - name: dim_products
+    description: "products dimension with pricing and category information"
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+      - name: standard_price
+        data_tests:
+          - not_null
+      

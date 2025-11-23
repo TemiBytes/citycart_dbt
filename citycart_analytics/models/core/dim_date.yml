@@ -1,0 +1,13 @@
+models:
+  - name: dim_date
+    description: "A dimension table built from dbt_utils.date_spine that provides detailed information about dates for use in analytics and reporting."
+    columns:
+      - name: date_day
+        description: "Calendar Date"
+        data_tests:
+          - not_null
+          - unique
+      - name: date_key
+        description: "int-like YYYYMMDD Key"
+        data_tests:
+          - not_null
